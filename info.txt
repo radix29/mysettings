@@ -1,0 +1,26 @@
+
+TO BE UPDATED
+=============
+
+.oh-my-zsh/
+gitstuff/radu
+gitstuff/other
+
+VIM Plugins
+===========
+~/.config/nvim/init.nvim
+
+:q" Plugins will be downloaded under the specified directory.
+call plug#begin('~/gitstuff/vimplugs')
+
+" Declare the list of plugins.
+Plug 'https://github.com/tpope/vim-dadbod'
+Plug 'https://github.com/preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+
+
+gitstuff/vimplug
+
