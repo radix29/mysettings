@@ -1,4 +1,3 @@
-
 TO BE UPDATED
 =============
 
@@ -25,3 +24,47 @@ Plug 'https://github.com/tpope/vim-dadbod'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+
+nvim
+====
+:set number
+
+docker
+======
+https://docs.docker.com/engine/install/ubuntu/
+
+glances
+=======
+sudo docker run -d --name=Glances --hostname=Glances --restart="always" -e GLANCES_OPT="-w" --network=host -v glances_config:/glances/conf -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host docker.io/nicolargo/glances
+
+sudo docker exec -it Glances glances
+
+ctop
+=====
+sudo docker run --rm -it --name ctop-container --volume /var/run/docker.sock:/var/run/docker.sock:ro quay.io/vektorlab/ctop:latest
+
+sql server
+==========
+https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-ver16&pivots=cs1-bash
+
+sudo docker pull mcr.microsoft.com/mssql/server:2022-latest
+
+sudo docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=inSecure123!' --restart unless-stopped --shm-size 1g -p 1433:1433 --name sql1 --hostname sql1 -u 0:0 -v /var/opt/sqlserver/data:/var/opt/mssql/data -v /var/opt/sqlserver/log:/var/opt/mssql/log -v /var/opt/sqlserver/secrets:/var/opt/mssql/secrets -d mcr.microsoft.com/mssql/server:2022-latest
+
+/var/opt/mssql/mssql.conf
+[memory]
+enablecontainersharedmemory = true
+
+sudo docker exec -t sql1 cat /var/opt/mssql/log/errorlog
+
+sudo docker exec -it sql1 "bash"
+
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "inSecure"
+
+sql data persistence: 
+https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-docker-container-configure?view=sql-server-ver16&pivots=cs1-bash#persist
+
+postgresql
+==========
+
+sudo docker run --name postgres -e POSTGRES_USER=postgres --restart unless-stopped -e POSTGRES_PASSWORD=inSecure123! -p 5432:5432 -v /var/opt/postgress/data:/var/lib/postgresql/data -d postgres
