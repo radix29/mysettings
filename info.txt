@@ -27,7 +27,11 @@ call plug#end()
 
 nvim
 ====
-:set number
+:set relativenumber
+
+rust
+====
+
 
 docker
 ======
