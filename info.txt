@@ -9,20 +9,7 @@ install vim-plug:
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
-~/.config/nvim/init.vim  "eq of .vimrc
-
-:tnoremap <Esc> <C-\><C-n>
-:set relativenumber
-
-call plug#begin()
-    Plug 'https://github.com/miyakogi/conoline.vim'
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'gruvbox-community/gruxbox'
-call plug#end()
-
-let g:conoline_auto_enable = 1
-:colorscheme gruvbox
+ln -s ~/mysettings/init.vim ~/.config/nvim/init.vim
 
 rust
 ====
