@@ -16,6 +16,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 
 call plug#begin()
     Plug 'https://github.com/miyakogi/conoline.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 
 let g:conoline_auto_enable = 1
