@@ -3,6 +3,11 @@ TO BE UPDATED
 
 .oh-my-zsh/
 
+Neovim Last
+===========
+sudo add-apt-repository ppa:neovim-ppa/stable
+
+
 VIM Plugins
 ===========
 install vim-plug:
@@ -11,8 +16,16 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 
 ln -s ~/mysettings/init.vim ~/.config/nvim/init.vim
 
-rust
-====
+change host
+==========
+sudo hostnamectl set-hostname newNameHere
+sudo vi /etc/hosts
+sudo reboot
+
+git
+===
+git config --global user.email "radu_colceriu@hotmail.com"
+git config --global user.name "radix29"
 
 
 docker
