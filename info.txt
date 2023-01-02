@@ -7,9 +7,14 @@ Neovim Last
 ===========
 sudo add-apt-repository ppa:neovim-ppa/stable
 
+BASH
+=====
+alias ll='ls -alF'
+
 
 VIM Plugins
 ===========
+-- check if packer is not more suitabe
 install vim-plug:
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
