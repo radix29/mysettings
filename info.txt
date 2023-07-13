@@ -17,7 +17,7 @@ chsh -s /usr/bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 https://www.tecmint.com/install-oh-my-zsh-in-ubuntu/
-
+theme eastwood
 
 
 Neovim Last
