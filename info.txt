@@ -1,7 +1,24 @@
 TO BE UPDATED
 =============
 
+Remove VIM (install neovim)
+===========
+dpkg-query -l | grep vim
+
+/etc/alternatives -> change link to nvim 
+ sudo ln -sfn /usr/bin/nvim vi
+ sudo ln -sfn /usr/bin/nvim vim
+
+Install ZSH
+===========
 .oh-my-zsh/
+sudo apt-get install zsh
+chsh -s /usr/bin/zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+https://www.tecmint.com/install-oh-my-zsh-in-ubuntu/
+
+
 
 Neovim Last
 ===========
